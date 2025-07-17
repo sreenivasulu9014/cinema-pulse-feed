@@ -61,7 +61,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cinema theme colors
+				cinema: {
+					gold: 'hsl(var(--cinema-gold))',
+					orange: 'hsl(var(--cinema-orange))',
+					red: 'hsl(var(--cinema-red))',
+					dark: 'hsl(var(--cinema-dark))',
+					darker: 'hsl(var(--cinema-darker))',
+					light: 'hsl(var(--cinema-light))'
 				}
+			},
+			fontFamily: {
+				heading: ['Playfair Display', 'serif'],
+				body: ['Inter', 'sans-serif']
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-overlay': 'var(--gradient-overlay)'
+			},
+			boxShadow: {
+				'cinema': 'var(--shadow-cinema)',
+				'glow': 'var(--shadow-glow)',
+				'card-cinema': 'var(--shadow-card)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
