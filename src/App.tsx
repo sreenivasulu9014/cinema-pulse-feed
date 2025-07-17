@@ -7,6 +7,10 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import LatestPage from "./pages/LatestPage";
 import ActorsPage from "./pages/ActorsPage";
+import ReleaseCalendarPage from "./pages/ReleaseCalendarPage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
+import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,9 +27,10 @@ const App = () => (
             <Route path="latest" element={<LatestPage />} />
             <Route path="actors" element={<ActorsPage />} />
             <Route path="reviews" element={<LatestPage />} />
-            <Route path="calendar" element={<LatestPage />} />
-            <Route path="blog" element={<LatestPage />} />
-            <Route path="about" element={<LatestPage />} />
+            <Route path="calendar" element={<ReleaseCalendarPage />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:id" element={<BlogPostPage />} />
+            <Route path="about" element={<AboutPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
