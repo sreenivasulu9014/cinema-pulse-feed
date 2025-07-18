@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import LatestPage from "./pages/LatestPage";
 import ActorsPage from "./pages/ActorsPage";
+import ReviewsPage from "./pages/ReviewsPage";
 import ReleaseCalendarPage from "./pages/ReleaseCalendarPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
@@ -26,7 +27,7 @@ const App = () => (
             <Route index element={<HomePage />} />
             <Route path="latest" element={<LatestPage />} />
             <Route path="actors" element={<ActorsPage />} />
-            <Route path="reviews" element={<LatestPage />} />
+            <Route path="reviews" element={<ReviewsPage />} />
             <Route path="calendar" element={<ReleaseCalendarPage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog/:id" element={<BlogPostPage />} />
