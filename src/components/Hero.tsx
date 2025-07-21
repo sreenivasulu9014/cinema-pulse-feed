@@ -57,42 +57,21 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 text-white drop-shadow-2xl">
-          Your Gateway to
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-white drop-shadow-2xl">
           <span className="block bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
             Cinema Universe
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-lg font-medium">
-          Discover the latest movie news, actor profiles, reviews, and behind-the-scenes content 
-          from Hollywood, Bollywood, Tollywood, and Kollywood.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="cinema" size="lg" className="text-lg px-8 py-4 shadow-2xl">
-            <Play className="mr-2 h-5 w-5" />
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+          <Button variant="cinema" size="lg" className="text-xl px-10 py-5 shadow-2xl">
+            <Play className="mr-3 h-6 w-6" />
             Watch Latest Trailers
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm shadow-2xl">
-            <Star className="mr-2 h-5 w-5" />
+          <Button variant="outline" size="lg" className="text-xl px-10 py-5 bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm shadow-2xl">
+            <Star className="mr-3 h-6 w-6" />
             Top Rated Movies
           </Button>
-        </div>
-        
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl font-bold text-yellow-400 mb-2 drop-shadow-lg">500+</div>
-            <div className="text-white/90 font-medium">Movie Reviews</div>
-          </div>
-          <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl font-bold text-yellow-400 mb-2 drop-shadow-lg">1000+</div>
-            <div className="text-white/90 font-medium">Actor Profiles</div>
-          </div>
-          <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl font-bold text-yellow-400 mb-2 drop-shadow-lg">Daily</div>
-            <div className="text-white/90 font-medium">News Updates</div>
-          </div>
         </div>
       </div>
     </section>
