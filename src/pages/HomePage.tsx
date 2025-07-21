@@ -3,6 +3,7 @@ import MovieCard from '@/components/MovieCard';
 import ActorCard from '@/components/ActorCard';
 import NewsCard from '@/components/NewsCard';
 import Newsletter from '@/components/Newsletter';
+import TrailerSection from '@/components/TrailerSection';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Calendar, Star } from 'lucide-react';
 import theaterInterior from '@/assets/theater-interior.jpg';
@@ -18,16 +19,18 @@ const HomePage = () => {
       releaseDate: "May 5, 2023",
       image: theaterInterior,
       status: "now-showing" as const,
-      description: "The beloved Guardians embark on their final adventure in this emotional conclusion to the trilogy."
+      description: "The beloved Guardians embark on their final adventure in this emotional conclusion to the trilogy.",
+      trailerUrl: "https://youtu.be/Qv-NEQJehVU"
     },
     {
-      title: "The Flash",
-      genre: "Superhero/Action",
-      rating: 7.8,
-      releaseDate: "June 16, 2023",
+      title: "The Bhootnii",
+      genre: "Horror/Thriller",
+      rating: 8.5,
+      releaseDate: "December 15, 2023",
       image: premiereScene,
       status: "now-showing" as const,
-      description: "Barry Allen races through time to save his family, but changing the past has dangerous consequences."
+      description: "A spine-chilling horror thriller that will keep you on the edge of your seat.",
+      trailerUrl: "https://youtu.be/vHk8tqbeq5o"
     },
     {
       title: "Spider-Man: Across the Spider-Verse",
@@ -36,7 +39,8 @@ const HomePage = () => {
       releaseDate: "June 2, 2023",
       image: theaterInterior,
       status: "trending" as const,
-      description: "Miles Morales catapults across the multiverse in this visually stunning sequel."
+      description: "Miles Morales catapults across the multiverse in this visually stunning sequel.",
+      trailerUrl: "https://youtu.be/vHk8tqbeq5o"
     }
   ];
 
@@ -66,25 +70,31 @@ const HomePage = () => {
       name: "Ryan Gosling",
       profileImage: premiereScene,
       industry: "Hollywood",
-      popularMovies: ["La La Land", "Blade Runner 2049", "The Notebook"],
+      popularMovies: ["La La Land", "Blade Runner 2049", "The Notebook", "First Man"],
       followers: "2.5M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://youtu.be/vHk8tqbeq5o",
+      rating: 4.8
     },
     {
       name: "Margot Robbie",
       profileImage: theaterInterior,
       industry: "Hollywood", 
-      popularMovies: ["Barbie", "Suicide Squad", "I, Tonya"],
+      popularMovies: ["Barbie", "Suicide Squad", "I, Tonya", "Once Upon a Time"],
       followers: "3.1M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://youtu.be/Qv-NEQJehVU",
+      rating: 4.9
     },
     {
       name: "Chris Pratt",
       profileImage: premiereScene,
       industry: "Hollywood",
-      popularMovies: ["Guardians of the Galaxy", "Jurassic World", "The Tomorrow War"],
+      popularMovies: ["Guardians of the Galaxy", "Jurassic World", "The Tomorrow War", "Mario"],
       followers: "4.2M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://youtu.be/vHk8tqbeq5o",
+      rating: 4.7
     }
   ];
 
@@ -121,6 +131,9 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      
+      {/* Auto-Playing Trailers Section */}
+      <TrailerSection />
       
       {/* Now Showing Section */}
       <section className="py-16 bg-background">
