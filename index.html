@@ -3,27 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IBomma TV Live - Latest Movie News & Entertainment Updates</title>
-    <meta name="description" content="IBomma TV Live - Latest Movie News, Reviews, Actor Profiles & Entertainment Updates" />
-    <meta name="author" content="IBomma TV Live" />
+    <title>Cinema Universe - Latest Movie News, Reviews & Actor Profiles</title>
+    <meta name="description" content="Discover the latest movie news, reviews, actor profiles, and entertainment updates from Hollywood, Bollywood, Tollywood, and Kollywood. Your gateway to cinema universe." />
+    <meta name="keywords" content="movies, bollywood, hollywood, tollywood, kollywood, movie reviews, actor profiles, cinema news, entertainment, trailers, movie ratings" />
+    <meta name="author" content="Cinema Universe" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="theme-color" content="#000000" />
     
-    <!-- Google Fonts -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/hero-cinema.jpg" as="image" />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Google Fonts with performance optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="f3e2e167-9e52-458e-8416-7ebf7f71dbe1" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://cinemauniverse.com/" />
+    <meta property="og:title" content="Cinema Universe - Latest Movie News, Reviews & Actor Profiles" />
+    <meta property="og:description" content="Discover the latest movie news, reviews, actor profiles, and entertainment updates from Hollywood, Bollywood, Tollywood, and Kollywood." />
+    <meta property="og:image" content="https://cinemauniverse.com/hero-cinema.jpg" />
+    <meta property="og:site_name" content="Cinema Universe" />
+    <meta property="og:locale" content="en_US" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cinemauniverse.com/" />
+    <meta property="twitter:title" content="Cinema Universe - Latest Movie News, Reviews & Actor Profiles" />
+    <meta property="twitter:description" content="Discover the latest movie news, reviews, actor profiles, and entertainment updates from Hollywood, Bollywood, Tollywood, and Kollywood." />
+    <meta property="twitter:image" content="https://cinemauniverse.com/hero-cinema.jpg" />
+    <meta property="twitter:site" content="@CinemaUniverse" />
+    <meta property="twitter:creator" content="@CinemaUniverse" />
+
+    <!-- Additional SEO tags -->
+    <link rel="canonical" href="https://cinemauniverse.com/" />
+    <meta name="google-site-verification" content="your-google-verification-code" />
+    
+    <!-- Structured Data for Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Cinema Universe",
+      "description": "Your ultimate destination for movie news, reviews, actor profiles, and entertainment updates from Hollywood, Bollywood, Tollywood, and Kollywood.",
+      "url": "https://cinemauniverse.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://cinemauniverse.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://twitter.com/cinemauniverse",
+        "https://facebook.com/cinemauniverse",
+        "https://instagram.com/cinemauniverse",
+        "https://youtube.com/cinemauniverse"
+      ]
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cinema Universe",
+      "description": "Leading entertainment platform for movie news, reviews, and celebrity updates",
+      "url": "https://cinemauniverse.com",
+      "logo": "https://cinemauniverse.com/logo.png",
+      "sameAs": [
+        "https://twitter.com/cinemauniverse",
+        "https://facebook.com/cinemauniverse",
+        "https://instagram.com/cinemauniverse",
+        "https://youtube.com/cinemauniverse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      }
+    }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <link rel="manifest" href="/manifest.json" />
   </body>
 </html>

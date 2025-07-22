@@ -1,3 +1,4 @@
+import { useSEO } from '@/hooks/useSEO';
 import ActorCard from '@/components/ActorCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -65,6 +66,9 @@ const ActorsPage = () => {
       isVerified: true
     }
   ];
+
+  // SEO optimization for actors page
+  useSEO({ page: 'actors' });
 
   return (
     <div className="min-h-screen py-8">

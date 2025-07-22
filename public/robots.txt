@@ -1,8 +1,17 @@
+# Robots.txt for Cinema Universe
+# Allow all crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Specific crawlers
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +19,19 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block access to sensitive areas (if any)
+Disallow: /admin/
+Disallow: /api/keys/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://cinemauniverse.com/sitemap.xml
+
+# Cache policy
+# Cache-Control: public, max-age=86400

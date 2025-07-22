@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useSEO } from '@/hooks/useSEO';
 import Hero from '@/components/Hero';
 import MovieCard from '@/components/MovieCard';
 import ActorCard from '@/components/ActorCard';
@@ -127,6 +129,9 @@ const HomePage = () => {
       readTime: "4 min read"
     }
   ];
+
+  // SEO optimization for homepage
+  useSEO({ page: 'home' });
 
   return (
     <div className="min-h-screen">

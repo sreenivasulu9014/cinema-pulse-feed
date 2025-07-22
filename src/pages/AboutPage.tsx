@@ -1,3 +1,4 @@
+import { useSEO } from '@/hooks/useSEO';
 import { Mail, Phone, MapPin, Users, Award, Heart, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -30,6 +31,9 @@ const AboutPage = () => {
     { number: "10+", label: "Years of Excellence", icon: Star },
     { number: "99%", label: "Reader Satisfaction", icon: Heart }
   ];
+
+  // SEO optimization for about page
+  useSEO({ page: 'about' });
 
   return (
     <div className="min-h-screen bg-background">
