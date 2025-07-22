@@ -16,7 +16,9 @@ const ActorsPage = () => {
       industry: "Hollywood",
       popularMovies: ["La La Land", "Blade Runner 2049", "The Notebook"],
       followers: "2.5M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://www.youtube.com/watch?v=uYPbbksJxIg",
+      rating: 9.2
     },
     {
       name: "Margot Robbie",
@@ -24,7 +26,9 @@ const ActorsPage = () => {
       industry: "Hollywood", 
       popularMovies: ["Barbie", "Suicide Squad", "I, Tonya"],
       followers: "3.1M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://www.youtube.com/watch?v=pBk4NYhWNMM",
+      rating: 8.9
     },
     {
       name: "Chris Pratt",
@@ -32,7 +36,9 @@ const ActorsPage = () => {
       industry: "Hollywood",
       popularMovies: ["Guardians of the Galaxy", "Jurassic World", "The Tomorrow War"],
       followers: "4.2M",
-      isVerified: true
+      isVerified: true,
+      videoUrl: "https://www.youtube.com/watch?v=u3V5KDHRQvk",
+      rating: 8.5
     },
     {
       name: "Deepika Padukone",
@@ -116,7 +122,14 @@ const ActorsPage = () => {
         </div>
 
         {/* Actors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 relative">
+          {/* Cinematic background effect */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-yellow-900/10 to-purple-900/10" />
+            <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }} />
+          </div>
           {actors.map((actor, index) => (
             <ActorCard key={index} {...actor} />
           ))}

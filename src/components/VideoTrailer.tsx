@@ -28,11 +28,11 @@ const VideoTrailer = ({
   const getEmbedUrl = (url: string) => {
     if (url.includes('youtube.com/watch?v=')) {
       const videoId = url.split('v=')[1].split('&')[0];
-      return `https://www.youtube.com/embed/${videoId}?autoplay=${autoPlay ? 1 : 0}&mute=${muted ? 1 : 0}&controls=0&rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${videoId}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&controls=1&rel=0&modestbranding=1`;
     }
     if (url.includes('youtu.be/')) {
       const videoId = url.split('youtu.be/')[1].split('?')[0];
-      return `https://www.youtube.com/embed/${videoId}?autoplay=${autoPlay ? 1 : 0}&mute=${muted ? 1 : 0}&controls=0&rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${videoId}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&controls=1&rel=0&modestbranding=1`;
     }
     return url;
   };
@@ -78,6 +78,7 @@ const VideoTrailer = ({
       ) : (
         <div className="relative">
           <iframe
+            key={`${isPlaying}-${isMuted}`}
             src={embedUrl}
             title={title}
             className="w-full h-full aspect-video"

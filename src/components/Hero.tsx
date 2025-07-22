@@ -10,7 +10,8 @@ const Hero = () => {
   // Convert YouTube URL to embed format with autoplay
   const getAutoplayEmbedUrl = (url: string) => {
     const videoId = 'vHk8tqbeq5o'; // The Bhootnii trailer
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&disablekb=1&fs=0&iv_load_policy=3`;
+    const muteParam = isMuted ? '1' : '0';
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${muteParam}&controls=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&disablekb=1&fs=0&iv_load_policy=3`;
   };
 
   return (
@@ -19,6 +20,7 @@ const Hero = () => {
       {showVideo ? (
         <div className="absolute inset-0 w-full h-full">
           <iframe
+            key={isMuted ? 'muted' : 'unmuted'} // Force re-render when mute changes
             src={getAutoplayEmbedUrl('')}
             className="w-full h-full object-cover scale-150 -translate-y-8"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
