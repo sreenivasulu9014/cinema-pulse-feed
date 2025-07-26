@@ -10,7 +10,7 @@ interface MovieCardProps {
   rating: number;
   releaseDate: string;
   image: string;
-  status: 'now-showing' | 'coming-soon' | 'trending';
+  status: 'now-showing' | 'coming-soon' | 'trending' | 'featured';
   description?: string;
   trailerUrl?: string;
 }
@@ -22,6 +22,7 @@ const MovieCard = ({ title, genre, rating, releaseDate, image, status, descripti
       case 'now-showing': return 'bg-green-600';
       case 'coming-soon': return 'bg-blue-600';
       case 'trending': return 'bg-cinema-orange';
+      case 'featured': return 'bg-gradient-accent';
       default: return 'bg-secondary';
     }
   };
@@ -31,6 +32,7 @@ const MovieCard = ({ title, genre, rating, releaseDate, image, status, descripti
       case 'now-showing': return 'Now Showing';
       case 'coming-soon': return 'Coming Soon';
       case 'trending': return 'Trending';
+      case 'featured': return 'Featured';
       default: return '';
     }
   };

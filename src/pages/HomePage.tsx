@@ -8,64 +8,17 @@ import Newsletter from '@/components/Newsletter';
 import TrailerSection from '@/components/TrailerSection';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Calendar, Star } from 'lucide-react';
+import { latestMovies2024, upcomingMovies2024 } from '@/data/movies';
 import theaterInterior from '@/assets/theater-interior.jpg';
 import premiereScene from '@/assets/premiere-scene.jpg';
 
 const HomePage = () => {
-  // Sample data - in a real app, this would come from an API
-  const nowShowingMovies = [
-    {
-      title: "Guardians of the Galaxy Vol. 3",
-      genre: "Action/Adventure",
-      rating: 8.2,
-      releaseDate: "May 5, 2023",
-      image: theaterInterior,
-      status: "now-showing" as const,
-      description: "The beloved Guardians embark on their final adventure in this emotional conclusion to the trilogy.",
-      trailerUrl: "https://youtu.be/Qv-NEQJehVU"
-    },
-    {
-      title: "The Bhootnii",
-      genre: "Horror/Thriller",
-      rating: 8.5,
-      releaseDate: "December 15, 2023",
-      image: premiereScene,
-      status: "now-showing" as const,
-      description: "A spine-chilling horror thriller that will keep you on the edge of your seat.",
-      trailerUrl: "https://youtu.be/vHk8tqbeq5o"
-    },
-    {
-      title: "Spider-Man: Across the Spider-Verse",
-      genre: "Animation/Action",
-      rating: 9.1,
-      releaseDate: "June 2, 2023",
-      image: theaterInterior,
-      status: "trending" as const,
-      description: "Miles Morales catapults across the multiverse in this visually stunning sequel.",
-      trailerUrl: "https://youtu.be/vHk8tqbeq5o"
-    }
-  ];
+  // Latest and trending movies from our comprehensive database
+  const nowShowingMovies = latestMovies2024.filter(movie => 
+    movie.status === 'now-showing' || movie.status === 'trending'
+  ).slice(0, 6);
 
-  const comingSoonMovies = [
-    {
-      title: "Oppenheimer",
-      genre: "Biography/Drama",
-      rating: 8.9,
-      releaseDate: "July 21, 2023",
-      image: premiereScene,
-      status: "coming-soon" as const,
-      description: "Christopher Nolan's epic biographical thriller about the father of the atomic bomb."
-    },
-    {
-      title: "Barbie",
-      genre: "Comedy/Adventure",
-      rating: 8.1,
-      releaseDate: "July 21, 2023",
-      image: theaterInterior,
-      status: "coming-soon" as const,
-      description: "Margot Robbie stars in this colorful adventure from the world of Barbie."
-    }
-  ];
+  const comingSoonMovies = upcomingMovies2024.slice(0, 4);
 
   const trendingActors = [
     {
@@ -154,8 +107,18 @@ const HomePage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {nowShowingMovies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+            {nowShowingMovies.map((movie) => (
+              <MovieCard 
+                key={movie.id} 
+                title={movie.title}
+                genre={movie.genre.join('/')}
+                rating={movie.rating}
+                releaseDate={movie.releaseDate}
+                image={movie.image}
+                status={movie.status}
+                description={movie.description}
+                trailerUrl={movie.trailerUrl}
+              />
             ))}
           </div>
         </div>
@@ -176,8 +139,18 @@ const HomePage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {comingSoonMovies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+            {comingSoonMovies.map((movie) => (
+              <MovieCard 
+                key={movie.id}
+                title={movie.title}
+                genre={movie.genre.join('/')}
+                rating={movie.rating}
+                releaseDate={movie.releaseDate}
+                image={movie.image}
+                status={movie.status}
+                description={movie.description}
+                trailerUrl={movie.trailerUrl}
+              />
             ))}
           </div>
         </div>
