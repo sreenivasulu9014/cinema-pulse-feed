@@ -35,7 +35,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="nav-link"
               >
                 {item.name}
               </Link>
@@ -51,10 +51,10 @@ const Header = () => {
                 className="pl-10 w-64 bg-muted/50"
               />
             </div>
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="btn-ghost hover:animate-glow-pulse">
               <Bell className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="btn-ghost hover:animate-glow-pulse">
               <User className="h-5 w-5" />
             </Button>
           </div>
@@ -83,7 +83,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className="cinema-link block py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
