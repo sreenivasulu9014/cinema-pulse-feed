@@ -1,121 +1,15 @@
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { blogPosts, getFeaturedPosts } from '@/data/blogPosts';
+import { useSEO } from '@/hooks/useSEO';
 
 const BlogPage = () => {
-  const featuredPosts = [
-    {
-      id: 'bhoothnii',
-      title: "The Bhoothnii: A Comprehensive Review",
-      excerpt: "Dive deep into the supernatural thriller that's taking Bollywood by storm. Shraddha Kapoor delivers a career-defining performance in this atmospheric horror masterpiece that combines traditional folklore with modern filmmaking techniques.",
-      author: "Rajesh Kumar",
-      date: "2024-01-15",
-      category: "Movie Review",
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=800&h=500&fit=crop&q=80",
-      readTime: "8 min read",
-      featured: true,
-      tags: ["Horror", "Bollywood", "Shraddha Kapoor", "Supernatural"],
-      rating: "4.5/5"
-    },
-    {
-      id: 'tollywood-trends',
-      title: "Tollywood 2024: Emerging Trends & Box Office Dominance",
-      excerpt: "From SS Rajamouli's cinematic universe to Ram Charan's upcoming projects, explore how Telugu cinema is reshaping Indian entertainment with record-breaking budgets and international collaborations.",
-      author: "Priya Sharma",
-      date: "2024-01-12",
-      category: "Industry Analysis",
-      image: "https://images.unsplash.com/photo-1489599510025-c4036860da0e?w=800&h=500&fit=crop&q=80",
-      readTime: "6 min read",
-      featured: true,
-      tags: ["Tollywood", "RRR", "Industry", "Box Office"],
-      rating: "Trending"
-    },
-    {
-      id: 'bollywood-box-office',
-      title: "Bollywood Box Office Report 2024: Complete Analysis",
-      excerpt: "Shah Rukh Khan's comeback continues with Jawan's success, while new-age directors like Rishab Shetty redefine commercial cinema. Complete breakdown of hits, misses, and surprise blockbusters.",
-      author: "Vikram Singh",
-      date: "2024-01-10",
-      category: "Box Office",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80",
-      readTime: "10 min read",
-      featured: true,
-      tags: ["Box Office", "Shah Rukh Khan", "Commercial Cinema"],
-      rating: "Analysis"
-    },
-    {
-      id: 'animal-review',
-      title: "Animal: Ranbir Kapoor's Raw & Unfiltered Performance",
-      excerpt: "Sandeep Reddy Vanga's controversial masterpiece pushes boundaries with Ranbir Kapoor's most intense role yet. A deep dive into the film's complex themes and polarizing reception.",
-      author: "Meera Chopra",
-      date: "2024-01-08",
-      category: "Movie Review",
-      image: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=800&h=500&fit=crop&q=80",
-      readTime: "12 min read",
-      featured: false,
-      tags: ["Ranbir Kapoor", "Sandeep Reddy Vanga", "Drama"],
-      rating: "4/5"
-    }
-  ];
-
-  const recentPosts = [
-    {
-      id: 'kollywood-updates',
-      title: "Kollywood's Rising Stars: Sivakarthikeyan to Vijay Sethupathi's Legacy",
-      excerpt: "From Sivakarthikeyan's commercial success to Dhanush's international projects, discover the actors reshaping Tamil cinema with their versatile performances and box office appeal.",
-      author: "Deepika Menon",
-      date: "2024-01-08",
-      category: "Celebrity News",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop&q=80",
-      views: "15.2K"
-    },
-    {
-      id: 'behind-scenes',
-      title: "RRR 2: SS Rajamouli's Vision Unfolds with Exclusive Production Updates",
-      excerpt: "Go behind the cameras as SS Rajamouli begins pre-production on the most anticipated sequel. Exclusive interviews with the cast and crew reveal the massive scale planned for this epic continuation.",
-      author: "Arjun Reddy",
-      date: "2024-01-05",
-      category: "Production News",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1489599510025-c4036860da0e?w=400&h=250&fit=crop&q=80",
-      views: "28.7K"
-    },
-    {
-      id: 'movie-reviews',
-      title: "January 2024: Top 10 Must-Watch Movies Across All Industries",
-      excerpt: "From Hrithik Roshan's Fighter to Mahesh Babu's Guntur Kaaram, our critics panel reviews the month's biggest releases with detailed analysis and ratings.",
-      author: "Film Critics Panel",
-      date: "2024-01-03",
-      category: "Reviews",
-      readTime: "12 min read",
-      image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=250&fit=crop&q=80",
-      views: "42.1K"
-    },
-    {
-      id: 'ott-releases',
-      title: "OTT Releases This Week: Netflix, Prime Video & Disney+ Hotstar",
-      excerpt: "Complete guide to this week's streaming releases including Scam 2003, Made in Heaven 2, and exclusive premieres you can't miss.",
-      author: "Streaming Desk",
-      date: "2024-01-01",
-      category: "OTT Updates",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop&q=80",
-      views: "18.9K"
-    },
-    {
-      id: 'awards-season',
-      title: "Awards Season 2024: Predictions and Dark Horses",
-      excerpt: "As awards season approaches, we analyze the front-runners and surprise contenders across Filmfare, National Awards, and international festivals.",
-      author: "Awards Team",
-      date: "2023-12-28",
-      category: "Awards",
-      readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1566665071221-b87cf1b6fb22?w=400&h=250&fit=crop&q=80",
-      views: "12.4K"
-    }
-  ];
+  useSEO({ page: 'blog' });
+  
+  const featuredPosts = getFeaturedPosts();
+  const recentPosts = blogPosts.filter(post => !post.featured).slice(0, 5);
 
   const categories = [
     "Movie Reviews",
